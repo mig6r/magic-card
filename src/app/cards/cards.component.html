@@ -1,0 +1,57 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #mySidenav [autoFocus]="false">
+        <my-magic-type-list (aunTypeSelected)="hello($event);mySidenav.toggle()"></my-magic-type-list>
+        
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-flat-button color="primary" (click)="mySidenav.toggle()" ><mat-icon>menu</mat-icon></button>
+            <h1 [title]='theme' (click)='switchTitle()'>{{ titleApp }}</h1>
+            <div fxFlex.xl="100" fxLayout="row wrap" fxLayoutAlign="end end">
+            <a [routerLink]="['/']"><button mat-raised-button>Home</button></a>
+          </div>
+          </mat-toolbar>
+
+          <ng-container *ngIf="isLoading" style="position:absolute; width :100%; height: 100%">
+          <mat-spinner ></mat-spinner>
+        </ng-container>
+          
+
+          
+
+
+
+        <!-- 
+          sous condition
+         -->
+          <my-magic-card [id]='query' *ngIf="query && -1 !== query.indexOf('-'); else cardlist" ></my-magic-card>
+          
+          <!-- # : référence locale -->
+
+          
+          
+          <ng-template #cardlist >
+
+            <my-magic-card-list [type]='query' (onBeforeCards)="toggleLoading(true)" (onLoadCards)="toggleLoading(false)"></my-magic-card-list>
+
+          </ng-template>
+
+         
+         
+         
+         
+          
+
+             
+
+            
+
+    
+    
+    
+    
+    
+        </mat-sidenav-content>
+ </mat-sidenav-container>
+<!-- <my-magic-card-list></my-magic-card-list> -->
+<button mat-raised-button color="primary">Primary</button>
