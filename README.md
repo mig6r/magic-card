@@ -1,6 +1,8 @@
 # My Magic
 This is my first Angular project
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/857e80375be743518f6ea025dbb3dde9)](https://www.codacy.com/app/mig6r/magic-card?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mig6r/magic-card&amp;utm_campaign=Badge_Grade)
+
 ## Demo
 
 Comming soon
